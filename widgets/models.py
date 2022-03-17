@@ -3,6 +3,7 @@ import datetime
 
 from django.db import models
 
+# TODO: this is trash, dry. need a better way to do this, also need http status associated
 ERR_A_OK = 0
 ERR_MODEL_DOES_NOT_EXIST = 1
 ERR_INVALID_DATA = 2
@@ -55,5 +56,5 @@ class Response:
         return json.dumps({
             'error_number': self.error_number,
             'error_message': self.error_message,
-            'widgets': tuple(w.to_dict() for w in self.widgets)
+            'widgets': tuple(w.to_dict() for w in self.widgets) if self.widgets else (),
         }, default=json_render_field)
