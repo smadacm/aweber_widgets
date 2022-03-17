@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  app:
+    image: python:3.10
+    volumes:
+      - "./:/opt/aweber"
+    ports:
+      - "9000:9000"
+    command: "/opt/aweber/docker/go.sh"

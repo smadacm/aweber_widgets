@@ -1,0 +1,4 @@
+- if this was production/nearly anything beyond proof-of-concept: (however, here, it would just get in the way)
+-- authentication would be in place,
+-- nearly everything would at least use @login_required or PermissionRequiredMixin
+-- CSRF would be in place
