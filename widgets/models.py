@@ -30,7 +30,7 @@ class Widget(models.Model):
     the entire purpose of this application is to track these do-dads
     id/pk is implied in django
     """
-    name = models.CharField('Name', max_length=NAME_MAX_LENGTH, null=False, blank=False)
+    name = models.CharField('Name', max_length=NAME_MAX_LENGTH, null=False, blank=False) # TODO: make sure this is utf8, preferably explicitly
     parts_count = models.IntegerField('Number of parts', default=0, null=False, blank=False)
 
     created_at = models.DateTimeField('Created date/time', auto_now_add=True)

@@ -2,3 +2,9 @@
 -- authentication would be in place,
 -- nearly everything would at least use @login_required or PermissionRequiredMixin
 -- CSRF would be in place
+
+TODO: README, instructions for client, generated docs?
+TODO: create known test data for test harness
+TODO: make simple test harness
+TODO: make tester container to run test harness and linter automatically
+TODO: fix type hinting
