@@ -8,3 +8,12 @@ services:
     ports:
       - "9000:9000"
     command: "/opt/aweber/docker/go.sh"
+
+  tester:
+    image: throwaway-tester:1.0
+    build:
+      context: "./"
+      dockerfile: "docker/tester_build/Dockerfile"
+    volumes:
+      - "./docker/tester.sh:/opt/aweber/docker/tester.sh"
+    command: "/opt/aweber/docker/tester.sh"

@@ -27,7 +27,8 @@ def render_response(error: tuple[int, str, int] = ERR_A_OK,
     resp_d = {
         'error_number': error[0],
         'error_message': error_message,
-        'widgets': tuple(w.to_dict() for w in widgets) if widgets else (),
+        'widgets': tuple(w.to_dict() for w in widgets)
+                if widgets and any(widgets) else (),  # noqa: E131
     }
 
     return HttpResponse(json.dumps(resp_d, default=models.json_render_field),
@@ -133,8 +134,8 @@ class ExistingWidget(generic.View):
     def get(self, request: HttpRequest, widget_id: int, *args: [any],
             **kwargs: dict) -> HttpResponse:
         widget = _get_widget_or_none(widget_id)
-        error = ERR_A_OK if widget else ERR_MODEL_DOES_NOT_EXIST
-        return render_response(error=error, widgets=(widget,))
+        return render_response(error=ERR_A_OK if widget else ERR_MODEL_DOES_NOT_EXIST,  # noqa: E501
+                               widgets=(widget,) if widget else tuple())
 
     # update
     def patch(self, request: HttpRequest, widget_id: int, *args: [any],
