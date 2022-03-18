@@ -46,7 +46,7 @@ def create_or_update_widget(raw_body: str, widget_id: typing.Optional[int] = Non
     take the raw request body, and possibly a widget id, get or create the widget,
     apply the user's input, save it, and return a response object that can be returned by a view
     """
-    error = ERR_A_OK
+    error: typing.Optional[tuple[int, str, int]] = None
     error_message = ''
 
     # these 2 slightly increase memory footprint, but if there's no default, pycharm fusses
@@ -95,15 +95,15 @@ def create_or_update_widget(raw_body: str, widget_id: typing.Optional[int] = Non
 
     # if we get this far, the input is valid, so update the widget and save
     if not error:
-        if 'name' in cleaned_input:
-            widget.name = cleaned_input['name']
-        if 'parts_count' in cleaned_input:
-            widget.name = cleaned_input['parts_count']
+        if 'name' in parsed_body:
+            widget.name = parsed_body['name']
+        if 'parts_count' in parsed_body:
+            widget.parts_count = parsed_body['parts_count']
 
         widget.save()
 
     # return the error or created/updated widget
-    return render_response(error=error, error_message=error_message or None, widgets=(widget,))
+    return render_response(error=error or ERR_A_OK, error_message=error_message or None, widgets=(widget,))
 
 
 # The actual views
