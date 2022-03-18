@@ -14,11 +14,14 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Widget',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=64, verbose_name='Name')),
-                ('parts_count', models.IntegerField(default=0, verbose_name='Number of parts')),
-                ('created_at', models.DateTimeField(auto_now_add=True, verbose_name='Created date/time')),
-                ('updated_at', models.DateTimeField(auto_now=True, verbose_name='Updated date/time')),
+                ('id', models.BigAutoField(auto_created=True, primary_key=True,
+                                           serialize=False,
+                                           verbose_name='ID')),
+                ('name', models.CharField(max_length=64,
+                                          verbose_name='Name')),
+                ('parts_count', models.IntegerField(default=0, verbose_name='Number of parts')),  # noqa: E501
+                ('created_at', models.DateTimeField(auto_now_add=True, verbose_name='Created date/time')),  # noqa: E501
+                ('updated_at', models.DateTimeField(auto_now=True, verbose_name='Updated date/time')),  # noqa: E501
             ],
         ),
     ]
