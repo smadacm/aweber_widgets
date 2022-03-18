@@ -7,4 +7,3 @@ TODO: README, instructions for client, generated docs?
 TODO: create known test data for test harness
 TODO: make simple test harness
 TODO: make tester container to run test harness and linter automatically
-TODO: fix type hinting
