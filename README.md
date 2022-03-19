@@ -18,7 +18,7 @@ The app container will
 - launch the test server
 
 The tester container will
-- install prerequisite packages from apk (which is non-destructive, so it can run every time the container boots),
+- install prerequisite packages from apk (which is non-destructive, so it can run every time the container boots, but it's slow, so it doesn't),
 - pause until the app server responds
 - run a series of tests that either output nothing or fail
 - print "Tester done. No errors found." to indicate the script finished without encountering problems.
