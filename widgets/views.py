@@ -93,7 +93,7 @@ def create_or_update_widget(raw_body: str,
         # check name max length
         elif 'name' in parsed_body and \
                 len(parsed_body['name']) > models.NAME_MAX_LENGTH:
-            err_msgs.append('"name" parameter is longer than maximum " '
+            err_msgs.append('"name" parameter is longer than maximum '
                             f'{models.NAME_MAX_LENGTH} characters.')
 
         # any error message means failure
