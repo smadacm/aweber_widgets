@@ -1,8 +1,0 @@
-- if this was production/nearly anything beyond proof-of-concept: (however, here, it would just get in the way)
--- authentication would be in place,
--- nearly everything would at least use @login_required or PermissionRequiredMixin
--- CSRF would be in place
--- the app container would be running uwsgi
--- there would be a web server container to expose the endpoints
-
-TODO: README, instructions for client, generated docs?

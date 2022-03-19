@@ -125,4 +125,6 @@ fi
 
 $CURL_CMD -X delete ${HOST}/widgets/{$id}/ 2>&1 > /dev/null
 
+echo "Tester done. No errors found."
+
 # vim: set ts=4 sw=4 et ai:

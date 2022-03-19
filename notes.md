@@ -1,0 +1,10 @@
+- if this was production/nearly anything beyond proof-of-concept: (however, here, it would just get in the way)
+  - authentication would be in place,
+  - nearly everything would at least use @login_required or PermissionRequiredMixin
+  - CSRF would be in place
+  - the app container would be running uwsgi
+  - there would be a web server container to expose the endpoints
+- The `tester` container is wholly unnecessary.
+   - It is basically an excuse to slide a Dockerfile in somewhere.
+   - The same thing could have been accomplished much easier with nearly any pre-made container and a couple package manager calls.
+   - If this was not for an interview, that's what I would have done (mind, I'd have used a better means of testing that likely would have made this a moot point anyway)
