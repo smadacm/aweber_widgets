@@ -4,7 +4,3 @@
   - CSRF would be in place
   - the app container would be running uwsgi
   - there would be a web server container to expose the endpoints
-- The `tester` container is wholly unnecessary.
-   - It is basically an excuse to slide a Dockerfile in somewhere.
-   - The same thing could have been accomplished much easier with nearly any pre-made container and a couple package manager calls.
-   - If this was not for an interview, that's what I would have done (mind, I'd have used a better means of testing that likely would have made this a moot point anyway)

@@ -10,10 +10,11 @@ services:
     command: "/opt/aweber/docker/go.sh"
 
   tester:
-    image: throwaway-tester:1.0
-    build:
-      context: "./"
-      dockerfile: "docker/tester_build/Dockerfile"
+    image: frolvlad/alpine-bash
     volumes:
       - "./docker/tester.sh:/opt/aweber/docker/tester.sh"
+    depends_on:
+      - "app"
     command: "/opt/aweber/docker/tester.sh"
+
+# vim: set ts=2 sw=2 et ai:
